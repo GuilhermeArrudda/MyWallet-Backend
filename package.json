@@ -1,0 +1,31 @@
+{
+  "name": "projeto_13_mywallet_back",
+  "description": "",
+  "version": "1.0.0",
+  "type":"module",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GuilhermeArrudda/MyWallet-Backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GuilhermeArrudda/MyWallet-Backend/issues"
+  },
+  "homepage": "https://github.com/GuilhermeArrudda/MyWallet-Backend#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^15.0.1",
+    "express": "^4.17.2",
+    "joi": "^17.6.0",
+    "mongodb": "^4.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
