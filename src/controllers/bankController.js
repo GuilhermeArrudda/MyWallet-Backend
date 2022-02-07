@@ -22,12 +22,12 @@ async function getBankOperations(req, res) {
 
 async function postNewBankOperation(req, res) {
     const session = res.locals.session;
-    const newOperation = req.body;
+    const { value, description } = req.body;
     console.log(session)
 
     try {
         
-        await db.collection('operations').insertOne({ newOperation, idPersonal: session.idPersonal });
+        await db.collection('operations').insertOne({ value, description, idPersonal: session.idPersonal });
 
         res.sendStatus(201)
     } catch (error) {
