@@ -1,4 +1,5 @@
 import db from "../db.js"
+import { bankOperationsSchema } from "../validations/bankOperationsSchema.js"
 
 async function validateTokenMiddleware(req, res, next){
     const authorization = req.headers.authorization;
@@ -20,6 +21,16 @@ async function validateTokenMiddleware(req, res, next){
     next();
 };
 
+async function validateBankOperationMiddleware(req, res, next){
+    const validation = bankOperationsSchema.validate(req.body);
+    if(validation.error) {
+        res.status(422).send("Dados inválidos")
+        return;
+    };
+    next();
+};
+
 export {
-    validateTokenMiddleware
+    validateTokenMiddleware,
+    validateBankOperationMiddleware
 }
